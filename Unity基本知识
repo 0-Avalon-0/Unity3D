@@ -15,11 +15,37 @@ Debug.LogError();//报出错误
 
 vs 注释快捷键 ctrl+k -> ctrl+c
 
-c#枚举声明：
+c#枚举声明（在该类外面声明）：
 enum Type{
   A,
   B,
   C
 }//即为定义好的一个类型
 使用方式：Type temp = Type.A;
+
+创建vector3(位置)实例：new vector3(1,1,1)
+
+类的新建实例(new)
+
+Update中写Input.GetAxis("Horizontal")可以获得用户水平输入
+
+定义命名空间和内部类：
+namespace ns{
+  class a{
+  }
+}
+
+脚本中参数初始值以inspector中给的值为准，不是脚本中初始化的值。
+GetComponent<BoxCollider>();
+
+Colliders [] t = GetComponents<Collider>();//可能有同名组件，所以用数组接收
+foreach(Collider c in t){
+
+}
+
+组件的禁用和激活：
+首先GetComponent获得
+修改Component.enabled(就是修改组件前面的勾选框)
+
+组件被禁用，其中的方法依然可以调用
 
