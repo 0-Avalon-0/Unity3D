@@ -1,0 +1,25 @@
+7.17:
+
+update 每帧进行一次操作
+一秒约为50帧
+所以console中后不断变大的次数即可看出update操作
+
+小知识：
+场景标题上有 * 号代表未保存
+
+日志输入和输出：
+print();//只能在继承Monobehaviour中才能使用
+Debug.Log();//任何情况都能使用
+Debug.LogWarning();//符号不一样，为警示符
+Debug.LogError();//报出错误
+
+vs 注释快捷键 ctrl+k -> ctrl+c
+
+c#枚举声明：
+enum Type{
+  A,
+  B,
+  C
+}//即为定义好的一个类型
+使用方式：Type temp = Type.A;
+
