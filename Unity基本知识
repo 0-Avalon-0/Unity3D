@@ -7,45 +7,39 @@ update 每帧进行一次操作
 小知识：
 场景标题上有 * 号代表未保存
 
-日志输入和输出：
-print();//只能在继承Monobehaviour中才能使用
-Debug.Log();//任何情况都能使用
-Debug.LogWarning();//符号不一样，为警示符
-Debug.LogError();//报出错误
 
-vs 注释快捷键 ctrl+k -> ctrl+c
 
-c#枚举声明（在该类外面声明）：
-enum Type{
-  A,
-  B,
-  C
-}//即为定义好的一个类型
-使用方式：Type temp = Type.A;
 
-创建vector3(位置)实例：new vector3(1,1,1)
+7.18：
+项目内部文件夹存储：
+Assets：资源文件夹，保存所有资源。
+Library：保存当前项目需要的库文件。
+Project Settings：保存项目的设置信息。
+Temp：保存临时数据。
+后三个是unity3d 负责的，只需注意Assets
 
-类的新建实例(new)
+右上角account layers layout
+layout可以调整所有控件的布局（选择default）
 
-Update中写Input.GetAxis("Horizontal")可以获得用户水平输入
+旋转观察角度有两种：
+1. 鼠标右键，旋转观察整个场景。
+2. alt+鼠标左键，旋转观察（比1方法好一些，可以先放大再转）
 
-定义命名空间和内部类：
-namespace ns{
-  class a{
-  }
-}
 
-脚本中参数初始值以inspector中给的值为准，不是脚本中初始化的值。
-GetComponent<BoxCollider>();
+以cube为参照，cube是长宽高都为1米的参照物。
 
-Colliders [] t = GetComponents<Collider>();//可能有同名组件，所以用数组接收
-foreach(Collider c in t){
+世界坐标系：
+红色（x）：右，现实生活中的南边  绿色（y）：上  蓝色（z）：前
 
-}
+世界坐标系不会改变方向
 
-组件的禁用和激活：
-首先GetComponent获得
-修改Component.enabled(就是修改组件前面的勾选框)
+物体自身坐标系：与世界坐标系类似，以物体自身为参照。
 
-组件被禁用，其中的方法依然可以调用
+local改成global就是沿世界坐标轴移动。
 
+世界坐标观察模式：
+Persp:透视模式，近大远小。
+ISO:正交模式，远近一样大。
+
+快捷键：
+F：聚焦  ctrl+d：快速复制
