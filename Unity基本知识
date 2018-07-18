@@ -75,8 +75,8 @@ Shader根据贴图处理生成材质球
 
 预制体比非预制体多了一个Prefab选项，字体是蓝色的
 
-预制体的好处：编辑其中一个，Apply以后所有的都改变
-
+预制体的好处：编辑其中一个，Inspector -> Prefab -> Apply以后所有的都改变
+Prefab -> Select，定位到使用的预制体
 
 
 
