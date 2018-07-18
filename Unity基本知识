@@ -18,13 +18,14 @@ Project Settings：保存项目的设置信息。
 Temp：保存临时数据。
 后三个是unity3d 负责的，只需注意Assets
 
+场景的后缀为.unity
+
 右上角account layers layout
 layout可以调整所有控件的布局（选择default）
 
 旋转观察角度有两种：
 1. 鼠标右键，旋转观察整个场景。
 2. alt+鼠标左键，旋转观察（比1方法好一些，可以先放大再转）
-
 
 以cube为参照，cube是长宽高都为1米的参照物。
 
@@ -43,3 +44,19 @@ ISO:正交模式，远近一样大。
 
 快捷键：
 F：聚焦  ctrl+d：快速复制
+Q W E R T切换 
+
+Material（材质球）：创建方法：Asset -> Create -> Material 后缀为.mat
+如何编辑材质球：选中，点Albedo前的圆点，在弹出的贴图选择界面选择需要的材质。
+
+Albedo:纹理贴图，或者漫反射贴图。
+Texture（贴图）
+
+Material 的 Inspector 中的Shader：着色器，通过Shader编辑材质球的效果
+“会写Shader的人才是真正的高手”
+
+总结一下：贴图 -> Shader -> 材质球 -> 模型
+Shader根据贴图处理生成材质球
+
+
+
