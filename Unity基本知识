@@ -94,7 +94,7 @@ e.g.: 材质为瓷砖，但是地面的效果是瓷砖远比桌子大。
 
 游戏处于运行状态时，任何操作都不会被保存
 
-Gameobject -> Align with view / ctrl + shift + F
+选中摄像机，Gameobject -> Align with view / ctrl + shift + F
 使摄像机视野与当前所处位置和角度一致
 
 摄像机相关属性Inspector -> Camera：
