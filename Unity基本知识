@@ -83,5 +83,60 @@ Prefab -> Select，定位到使用的预制体
 
 
 
+7.19：
+材质球出现的效果不真实
+e.g.: 材质为瓷砖，但是地面的效果是瓷砖远比桌子大。
+调整：材质球中 shader -> tiling
+
+在套用预制体建成的物体中做修改，会破坏其预制体属性，即不再为预制体，但是仍然可以在Inspector面板中选择Prefab属性，勾选select / apply
+（此处的Prefab颜色为黄色）
+
+游戏处于运行状态时，任何操作都不会被保存
+
+Gameobject -> Align with view / ctrl + shift + F
+使摄像机视野与当前所处位置和角度一致
+
+摄像机相关属性Inspector -> Camera：
+1. Clear Flags：
+SkyBox：天空盒，游戏场景的最外层，作为背景
+Solid Color：背景纯色，只有在这个模式下才能改Background color
+
+Projection：投影，摄像机的拍摄模式
+Perspective 透视模式，3D使用
+Orthographic 正交模式，2D使用
+此处改的是摄像机的视角
+Scenes中世界坐标系下的persp 和 ISO 改的是游戏场景的视角
+
+Clipping planes（调整摄像机观察范围，面之间的距离）：
+Near近平面：0.3，500
+Far远平面：100，500，1000
+
+方向光Directional Light，模拟太阳光
+任何地方都能照射到，但是要注意照射方向
+
+方向光属性：
+Type:
+Color:
+Intensity:光强度
+Shadow Type: No / Hard（带锯齿） / Soft
+
+Point light(在light -> Type中设置)：
+模拟电灯泡
+
+Spot light模拟聚光灯
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
