@@ -123,7 +123,31 @@ Mesh Collider:
 使用时选择对应的Mesh属性。
 
 
+刚体常用方法：
+AddForce:给刚体添加一个力，按 世界坐标系 移动。
 
+Rigidbody.AddForce(Vector3,ForceMode):其中ForceMode是枚举类型
+
+ForceMode枚举：
+Acceleration：加速度。
+Force：通常用于设置真实的物理，使用频率最高。
+Impulse：通常用于瞬间发生的力。
+VelocityChange：速度变化。
+
+AddRelativeForce:添加一个力，按 自身坐标系 移动。
+Rigidbody.AddRelativeForce(Vector3,ForceMode):其中ForceMode是枚举类型
+
+
+FixedUpdate方法：
+固定更新方法。
+所有和物理相关的操作都要写在FixedUpdate中。
+固定更新方法一次0.02秒，一秒50次。
+Edit -> Project Settings -> Time 可以修改Fixed Timestep修改时间间隔。
+
+Update()方法是每帧执行一次。
+画面每渲染完一次就是一帧，每帧的时间不固定（和场景有关系）。
+
+在Update（）方法中执行物理操作，会出现卡顿。
 
 
 
