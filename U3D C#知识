@@ -245,6 +245,23 @@ String是物体名字。
 
 
 
+1. 通过Tag标签查找物体。
+Tag标签。
+设置：Inspector顶部有一个Tag选项。如果是untagged，下拉点击Add tag。
+tags下拉框 点击加号。
+
+通过标签查找N个物体：
+GameObject.FindGameObjectsWithTag(string)：静态方法
+返回一个数组。
+String 标签名
+
+
+
+2. 触发器实现桌椅跳动。
+首先创建触发器，创建空物体，添加Box Collider，勾选Is Trigger。
+实现enter 和 exit方法。
+
+
 
 
 
