@@ -154,6 +154,61 @@ Update()方法是每帧执行一次。
 
 
 
+7.21：
+两物体碰撞产生的效果只是物理上的，即RigidBody造成的
+
+刚体碰撞事件监测与处理:
+OnCollisionEnter(Collision):当碰撞开始时调用，只会调用一次。
+OnCollisionExit(Collision):当碰撞结束时调用，只会调用一次。
+OnCollisionStay(Collision):当碰撞进行中，持续调用。
+Collision参数：
+为一个Collision类，传递碰撞信息。
+Collision.gameObject属性，与当前物体碰撞的物体引用。（即获得被撞物体的引用）
+gameObject.name属性，当前被撞物体的名字。
+
+以上Collision函数与Start / Update级别一致。
+
+
+刚体触发事件监测与处理：
+触发器：
+将碰撞体属性面板上的Is Trigger选项选中，当前物体的碰撞体就变成了触发器。
+
+移动的刚体物体会穿透 勾选Is Trigger的物体。
+
+触发事件：
+当一个用刚体控制的物体进入另一个物体的触发器范围内，就是触发事件。
+
+触发用途：不与目标物体发生直接的碰撞，而是只要进入触发范围内就能执行某些特定操作。
+
+更改触发器范围：修改Collider中Size属性。
+
+触发事件监测方法：
+OnTriggerEnter(Collider)
+OnTriggerExit(Collider)
+OnTriggerStay(Collider)
+传递参数是进入的触发器的Collider。
+
+Collider参数：
+Collider.gameObject:进入触发物体的引用。
+gameObject.name：触发器名字。
+
+
+
+网格组件 网格过滤器和渲染器：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
