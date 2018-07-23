@@ -1,1 +1,62 @@
+7.23：
+
 在使用Unity开发MMORPG,MMOARPG（大型页游）客户端时，50%以上工作量是在写UI界面和UI界面的逻辑。
+
+插件
+1. NGUI：
+使用最多的第三方UI插件。
+
+2. UGUI:
+Unity 自带的。
+
+3. OnGui:
+用于扩展Unity引擎界面。
+
+4. Legacy GUi：
+只能实现稍实用但是能用的UI。
+
+GUI Text组件：主要用于文字显示。
+创建方法：
+新建一个空物体，添加Rendering -> GUI Text组件即可。
+文字大小默认为0，单位是像素（为 0 会看不到）。
+
+Pixel offset像素偏移量：设置x / y值设置文本在场景中显示的位置。
+
+注意 ！！
+主摄像机没有GUI layer控件会无法显示文本。
+
+
+GUItexture：用于图片的显示。
+同样在Rendering中选择组件搭载。
+使用：
+首先将Transform中Scale改为0.1，之后再设置相关属性。
+
+Texture属性:设置要显示的图片。
+Color属性：设置图片颜色，默认状态下不影响图片显示效果，只影响色调。（灰色不会影响，默认为灰色）
+
+Pixel Inset像素设置：
+X / Y 设置图片显示位置。
+W / H 设置图片宽高。
+
+
+鼠标事件：
+之前所用的 Input类下的鼠标输入是全局的，只能获取鼠标的按键状态。
+
+此处的是挂载在一个物体上，只当操作该物体时才生效。
+
+常用事件方法：
+OnMouseEnter():
+OnMouseExit():
+OnMouseDown():鼠标按下，即单击。
+
+颜色参数：Color结构体，Color.red,...
+
+
+
+
+
+
+
+
+
+
