@@ -27,7 +27,7 @@ Pixel offset像素偏移量：设置x / y值设置文本在场景中显示的位
 
 
 GUItexture：用于图片的显示。
-同样在Rendering中选择组件搭载。
+首先创建空物体，然后同样在Rendering中选择组件搭载。
 使用：
 首先将Transform中Scale改为0.1，之后再设置相关属性。
 
@@ -50,6 +50,45 @@ OnMouseExit():
 OnMouseDown():鼠标按下，即单击。
 
 颜色参数：Color结构体，Color.red,...
+
+
+
+特效组件 
+TrailRenderer拖尾渲染器:用于渲染显示“拖尾特效”
+
+特效应用：用于高速运动物体，炮弹、子弹等。
+
+！！体现物体运动速度。
+
+创建：新建一个空物体，添加TraiRenderer组件 Effects -> Trail Renderer
+
+在Scene移动该空物体就可以看到效果。
+
+TrailRenderer -> Materials 材质球使用：使用材质渲染拖尾。
+注意Element属性
+
+若没有赋值材质球，默认是粉红色的。
+
+
+制作透明材质球：
+创建，设置Shader为Particles -> Additive
+最后赋予Texture。
+
+常用属性：Time：拖尾持续时间。
+Start Width：开始宽度。
+End Width：结束宽度。
+Color：
+实际开发中，美工给的图往往是黑白图，黑色是透明区，白色不透明。
+可以通过手动改Color，让白色区域显示特定颜色。
+
+
+
+LineRenderer：
+线渲染器，渲染显示线特效。
+应用：激光效果，子弹瞄准。
+
+常用属性：
+Positions：开始，结束位置。Size为2说明是2个结点。
 
 
 
