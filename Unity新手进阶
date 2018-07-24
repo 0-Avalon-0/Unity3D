@@ -94,6 +94,37 @@ Positions：开始，结束位置。Size为2说明是2个结点。
 
 
 
+7.24：
+声音组件AudioSource：
+用于播放AudioClip资源。
+
+使用时同样创建一个空物体（可选），添加AudioSource组件。
+属性：
+Audio Clip： 资源
+PlayOnAwake：唤醒时播放，游戏一运行就播放。
+Loop：
+Mute：静音。
+Volume：0~1
+Spatial Blend：空间混合。为0是2D，任何位置听的都一样。为1是3D，根据摄像机与音频源距离有关。
+做2D 或是 3D游戏时要注意。
+
+Audio Listener：声音侦听器。默认挂载在摄像机上，作为“耳朵”。
+
+Audio Source常用函数：
+Play / Stop / Pause
+Stop和Pause区别在于点击以后重新再play，stop是从头开始播放，Pause是接着刚刚的地方播放。
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
