@@ -115,6 +115,47 @@ Play / Stop / Pause
 Stop和Pause区别在于点击以后重新再play，stop是从头开始播放，Pause是接着刚刚的地方播放。
 
 
+实例化游戏物体：
+GameObject.Instantiate(Object,Vector3,Quaternion)
+参数分别为：预制体，目标生成位置，旋转状态（四元数）。
+Quaternion.identity：无旋转。
+
+脚本内变量定义为Public即可引用外部物体。（拖拽即可）
+
+构造随机位置：
+Random.Range(min,max)：生成随机数。
+
+
+销毁游戏物体：
+Game Object.Destroy(Object,float) 定时销毁某物体。
+float参数：时间。
+
+
+Invoke函数：归属于MonoBehaviour类
+
+Invoke(string,float)：多少秒后执行某个函数。
+string:要执行的函数名
+float:时间
+
+InvokeRepeating(string,float,float):多少秒（第二个）后执行，每隔多少秒（第三个）后再执行
+
+CancelInvoke():取消 所有 Invoke调用。
+
+
+消息发送：
+gameObject.SendMessage(String)：通知 该游戏体上 脚本文件中指定方法执行
+String是方法名，要执行的方法的名称。
+
+注意，private方法无法执行！！
+
+或者可以通过ganmeObject.GetComponent<脚本名>.函数名来实现
+
+
+
+
+
+
+
 
 
 
