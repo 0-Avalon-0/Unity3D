@@ -153,6 +153,31 @@ String是方法名，要执行的方法的名称。
 
 
 
+7.25：
+协同程序Coroutine：
+在脚本y运行过程中，需要执行一些其他的代码，遇到条件会挂起。
+类似于开线程，但不是。
+区别在于：任何时刻只有一个系统程序运行，与多线程程序不一样（多个线程同时）。
+
+使用前提：必须继承MonoBehaviour
+e.g.:
+IEnumerator Task()
+{yield return new WaitForSeconds(2);
+Debug.Log();
+}
+
+IEnumerator:返回值类型，协同程序固定写法
+yield return:返回
+
+调用协同程序：
+StartCoroutine("协同程序方法名")(e.g.:"Task3")
+
+停止：
+Stop Coroutine("协同程序方法名")(e.g.:"Task3")
+
+同一个协同程序可以 yield return 多个值。
+
+
 
 
 
