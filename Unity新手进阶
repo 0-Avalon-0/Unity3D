@@ -182,6 +182,34 @@ Stop Coroutine("协同程序方法名")(e.g.:"Task3")
 
 7.26：
 生命周期
+脚本生命周期即挂载的物体生命周期
+生命周期事件 是一些特定的方法
+全部定义在MonoBehaviour 类中
+
+生命周期图片！！重要！！
+
+Editor -> Initialization -> Physices -> Input -> Game Logic (Update / yield) -> Rendering -> End of game
+-> Pausing -> Disable -> Decomposing
+
+Instantiate出来的是 Object 类型
+
+父类无法赋值给子类  多态！！
+
+所以实例化出来的类型 需要 as GameObject 才能赋值给 GameObject
+
+
+按照使用顺序:
+1.Awake():唤醒事件，只执行一次。
+2.OnEnable():启用事件，只执行一次，当脚本组件被启用时执行一次，即勾选脚本组件前的方框。
+3.Start()
+前三个常用于初始化。
+
+4.FixedUpdate():固定更新，0.02秒一次。所有物理组件相关更新都在此调用。
+5.Update()
+6.LateUpdate():稍后更新，在Update之后执行。
+7.OnGUI():渲染事件
+8.OnDisable():禁用事件，执行一次，在OnDestroy之前执行，当脚本组件被启用时执行一次，即勾选脚本组件前的方框。
+9.OnDestroy():销毁事件，执行一次。
 
 
 
