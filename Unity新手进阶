@@ -82,7 +82,6 @@ Color：
 可以通过手动改Color，让白色区域显示特定颜色。
 
 
-
 LineRenderer：
 线渲染器，渲染显示线特效。
 应用：激光效果，子弹瞄准。
@@ -215,6 +214,82 @@ Instantiate出来的是 Object 类型
 
 
 
+7.27：
+常用API
+工具类：
+1. Screen 屏幕类：
+Screen.width:静态只读，屏幕宽度。
+Screen.height:静态只读，屏幕高度。
+
+在Unity开发下，这两个值取的是Game窗口的宽度和高度（缩放窗口 值就改变）
+编译打包后运行，是具体设备的宽度和高度。
+
+2.Time时间类：
+Time.time:静态只读，从游戏开始到现在经过的时间（秒数）。
+
+Time.deltaTime:静态只读，时间增量。渲染完上一帧画面消耗的时间。
+（可用于实现倒计时）
+
+Time.timeScale:静态可读写。时间缩放程度，可用于暂停游戏。
+当值为1时，游戏正常。为0时，游戏暂停。为0.5时，游戏处于慢放0.5倍状态。
+
+
+
+3.Mathf数学类：
+Mathf是一个结构体类型，包含各种数学运算函数。
+Mathf.Abs()
+Mathf.Round():四舍五入 Mathf.Round(0.6f) -> 1
+
+插值运算函数：
+Mathf.Lerp(float a,float b,float f)
+基于t，返回a到b之间的插值，t限制在0-1之间。
+就是按比例返回，例如a=2.0,b=5.0,f=0.3,返回2.9 (2+(5-2)*0.3)
+
+一个数从0插值到10
+num = Mathf.Lerp(num,10,Time.deltaTime)
+
+插值运算的目的基本都是为了  ”平滑过渡“
+
+
+物理射线后期使用频率极高！！
+
+
+物理射线之原理分析：
+物理射线可以与游戏中其他物体的Collider碰撞，碰撞即结束。
+
+通过摄像机创建射线。
+
+Camera.main: 代表tag设置为Main Camera的摄像机的 Camera组件的引用。
+（解释：camera名称为Main camera，其下的组件有一个叫Camera）
+
+摄像机组件(对象)下的一个方法：
+m_Camera.ScreenPointToRay(Vector3)
+屏幕点转化为射线，该方法返回一个Ray类型的射线。
+
+点通常写鼠标的点击位置，这样就代表从摄像机向点的位置发出一个射线。
+
+Input.mousePosition:鼠标所在的位置值。
+
+Ray 射线，一个结构体。
+
+
+检查射线与其他物体的碰撞：
+RaycastHit 结构体，用于存储射线的碰撞信息。
+
+Physics.Raycast(Ray,out RaycastHit)静态方法，射线检查。
+该方法返回值为bool类型
+如果与场景中物理组件相碰撞，返回值为真，并将信息存储在RaycastHit类型的变量中。
+
+out关键字与ref关键字类似，都是引用中从方法内接收值。
+区别在于ref关键字必须初始化，out形参不需要。
+
+
+tip:方法前加注释，三条斜杠
+
+总结，三个步骤：
+1. 摄像机建立射线
+2. 检查射线碰撞，得到碰撞信息
+3. 根据信息处理
 
 
 
