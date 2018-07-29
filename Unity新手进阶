@@ -13,7 +13,7 @@ Unity 自带的。
 用于扩展Unity引擎界面。
 
 4. Legacy GUi：
-只能实现稍实用但是能用的UI。
+只能实现稍实用但是不好看的UI。
 
 GUI Text组件：主要用于文字显示。
 创建方法：
@@ -126,7 +126,7 @@ Random.Range(min,max)：生成随机数。
 
 
 销毁游戏物体：
-Game Object.Destroy(Object,float) 定时销毁某物体。
+GameObject.Destroy(Object,float) 定时销毁某物体。
 float参数：时间。
 
 
@@ -302,6 +302,26 @@ RaycastHit.point:获取射线碰撞点。
 Vector3向量计算方向：
 方向是矢量，也是Vector3类型的，由末位置减去初位置得到。
 
+
+此处有问题：砖块生成后会弹射开来，无法形成墙壁。？？？
+
+
+7.29：
+优化：
+1.自动销毁砖块
+当低于地面时销毁。
+
+2.自动销毁子弹：使用时间判断（3s内自动销毁）。
+
+3.砖块颜色五彩：
+获取d到渲染组件，随机生成。（R G B 的值随机生成，取值范围 0—1）
+
+Debug绘制射线：
+Debug.DrawRay(Vector3,Vector3,Color)
+第一个参数：起点位置
+第二个参数：终点减去起点位置的一个方向
+
+运行以后只能在Scene中看到（调试）
 
 
 
