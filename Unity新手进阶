@@ -321,7 +321,16 @@ Debug.DrawRay(Vector3,Vector3,Color)
 第一个参数：起点位置
 第二个参数：终点减去起点位置的一个方向
 
-运行以后只能在Scene中看到（调试）
+运行以后只能在Scene中看到（调试）。
+
+
+
+飞盘射击Demo：
+UnityPackage打包格式，存储项目资源
+导入：
+直接拖入project里，或者Assets -> import -> custom
+
+制作场景时确保方向正确，z是前方朝前，y是上方朝上。
 
 
 
