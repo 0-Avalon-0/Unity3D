@@ -363,12 +363,46 @@ m_Transform.FindChild(string):在当前物体子物体查找游戏物体。//该
 
 枪口添加激光特效：
 枪口位置添加LineRenderer
+注意此处添加空物体移动的是 pivot，即真实坐标，不是Global
 
-通过子物体的transform组件来反查其所在物体，然后查找相应组件
+通过子物体的transform组件来反查其所在物体（find 函数），然后查找相应组件
 
 SetPosition(int,Vector3):设置线的起始结束位置。
 第一个参数选择是起始还是结束，第二个选择位置。
 修改的即是Position中的Element0和Element1
+
+
+
+
+
+7.31：
+飞盘预制体制作：
+hit.collider.tag可以获取碰撞物体的标签
+
+Transform.parent:属返回当前物体的父物体的Transform 值
+Transform.GetComponentsInChildren<T>():获取所有子物体的某个组件
+
+gameObject.AddComponent<T>():动态添加组件
+
+Transform.SetParent(Transform):将当前物体设置为另一个物体的子物体
+用途：让自动生成的物体作为父物体的子物体
+
+添加声音：
+给摄像机添加AudioSource组件
+
+添加背景音效：
+给角色模型添加声音源，默认不播放，射击一次播放一次
+
+
+
+
+
+
+
+
+
+
+
 
 
 
