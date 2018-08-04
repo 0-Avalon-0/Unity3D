@@ -489,6 +489,21 @@ e.g.: GameObject.GameState即可
 
 
 结束界面逻辑：
+显示总分数：
+查找到分数UI再显示即可。
+
+
+重新开始按钮：
+与开始游戏按钮类似。
+编写时出现错误，可用 Debug.Log 方法输出尝试。
+
+原因在 Update 函数中 在倒计时小于0时会跳转到 结束界面。 此处不是 Bug 。
+因此倒计时要置位。
+
+
+gameObject.GetComponentsInChildren<Transform>() (根据父物体的 Transform 查找到所有子物体的 transform, 再反推到所有子物体的gameObject)
+该函数会把父物体也查找到里面，且父物体为数组序列下标第一个。
+所以要Destroy，需要从第二个，即下标为 1 的项开始Destroy。
 
 
 
